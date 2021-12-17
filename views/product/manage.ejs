@@ -1,0 +1,66 @@
+<%- include('../_partials/_layout-start') %>
+
+<% if (locals.errors) { %>
+  <% errors.forEach(error => { %>
+    <div class="alert alert-danger"><%= error.message %></div>
+  <% }) %>
+<% } %>
+
+<form method="post">
+  <div>
+    <label class="form-label" for="name">Name</label>
+    <input class="form-control" type="text" id="name" name="name" class="name"
+      <% if (locals.product) {%> value="<%= product.name %>" <% } %>
+    >
+  </div>
+  <div>
+    <label class="form-label" for="price">Price</label>
+    <input class="form-control" type="text" id="price" name="price" class="price"
+      <% if (locals.product) { %> value="<%= product.price %>" <% } %>
+    >
+  </div>
+  <div>
+    <label class="form-label" for="stock">Stock</label>
+    <input class="form-control" type="text" id="stock" name="stock" class="stock"
+      <% if (locals.product) { %> value="<%= product.stock %>" <% } %>
+    >
+  </div>
+  <div>
+    <label class="form-label" for="picture">Picture</label>
+    <input class="form-control" type="text" id="picture" name="picture" class="picture"
+      <% if (locals.product) {%> value="<%= product.picture %>" <% } %>
+    >
+  </div>
+  <hr>
+  <div><input type="submit" value="<%= locals.product ? 'Edit' : 'Create' %>" class="btn btn-success"></div>
+</form>
+
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach((product, index) => { %>
+    <tr>
+      <th scope="row"><%= index + 1 %></th>
+      <td><%= product.name %></td>
+      <td><%= product.stock %></td>
+      <td>
+        <a href="/product/<%= product._id %>/edit">Edit</a>
+        <form action="/product/<%= product._id %>/delete" method="post">
+          <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../_partials/_layout-end') %>

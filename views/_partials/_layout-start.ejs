@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <title><%= title %></title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about-us">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact-us">Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/product">Manage product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">Panier</a>
+        </li>
+
+        <li>
+          <h4><%= locals.username %> </h4>
+        </li>
+      </ul>

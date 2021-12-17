@@ -1,0 +1,24 @@
+<%- include('../_partials/_layout-start') %>
+
+<form action="/checkout/address" method="post">
+  <div>
+    <label class="form-label" for="name">Name</label>
+    <input class="form-control" type="text" id="name" name="name"
+    <% if (user) { %>
+      value="<%= user.deliveryAddress.name %>"
+    <% } %>
+    >
+  </div>
+  <div>
+    <label class="form-label" for="address">Address</label>
+    <input class="form-control" type="text" id="address" name="address"
+    <% if (user) { %>
+      value="<%= user.deliveryAddress.address %>"
+    <% } %>
+    >
+  </div>
+  <hr>
+  <div><input class="btn btn-success" type="submit" value="Envoyer"></div>
+</form>
+
+<%- include('../_partials/_layout-end') %>

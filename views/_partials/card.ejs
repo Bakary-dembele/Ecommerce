@@ -1,0 +1,24 @@
+<div class="card" style="width: 18rem;">
+  <img src="<%= datum.picture %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= datum.title %></h5>
+    <p class="card-text"><%= datum.subtitle %></p>
+    <% if (datum.primaryCta) { %>
+      <a href="<%= datum.primaryCta %>" class="btn btn-primary"><%= datum.primaryCtaLabel %></a>
+    <% } %>
+
+    <% if (datum.secondaryCta) { %>
+      <hr>
+      <form action="/cart/add/<%= datum.id %>" method="post">
+        <div class="row">
+          <div class="col">
+            <input type="number" name="quantity" min="1" value="1" class="form-control">
+          </div>
+          <div class="col">
+          <input class="btn btn-success" type="submit" value="Buy me">
+          </div>
+        </div>
+      </form>
+    <% } %>
+  </div>
+</div>

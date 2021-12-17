@@ -1,0 +1,4 @@
+PORT=4000
+DEBUG=express:*
+DB_URL=mongodb+srv://cda:paris@2itech.ehl00.mongodb.net/ecommerce?retryWrites=true&w=majority
+SECRET=secrets

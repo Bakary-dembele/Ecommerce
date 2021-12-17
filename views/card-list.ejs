@@ -1,0 +1,7 @@
+<%- include('_partials/_layout-start') %>
+
+<% data.forEach(datum => { %>
+  <%- include('_partials/card', {datum}) %>
+<% }) %>
+
+<%- include('_partials/_layout-end') %> 
